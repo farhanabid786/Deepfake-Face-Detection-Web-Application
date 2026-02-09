@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deepfake Detection System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div class="container">
+    <h1>Deepfake Detection System</h1>
+    <p>Upload a face image to check whether it is <b>Real</b> or <b>Fake</b></p>
+
+    <div class="upload-box">
+        <input type="file" id="imageInput" accept="image/*">
+        <img id="preview" hidden>
+    </div>
+
+    <button onclick="detect()">Detect</button>
+
+    <div id="result" class="result hidden"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
