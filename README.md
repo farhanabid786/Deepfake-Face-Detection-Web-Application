@@ -38,7 +38,7 @@ The system provides high accuracy and a clean web interface built with **FastAPI
 | Platform   | Localhost |
 
 ---
-🗃️ Dataset Used
+## 🗃️ Dataset Used
 
 This project uses a combined dataset of multiple real and fake face image sources to create a large, diverse, and balanced dataset for training and testing the deep learning model. The following publicly available datasets from Kaggle were used:
 | Dataset                                | Source                                                                                                                                                                   | Description                                                                                                                                |
