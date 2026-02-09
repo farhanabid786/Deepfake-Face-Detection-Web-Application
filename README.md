@@ -38,7 +38,18 @@ The system provides high accuracy and a clean web interface built with **FastAPI
 | Platform   | Localhost |
 
 ---
+🗃️ Dataset Used
 
+This project uses a combined dataset of multiple real and fake face image sources to create a large, diverse, and balanced dataset for training and testing the deep learning model. The following publicly available datasets from Kaggle were used:
+| Dataset                                | Source                                                                                                                                                                   | Description                                                                                                                                |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **140K Real and Fake Faces**           | [https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces](https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces)                                       | A large dataset containing 140,000 face images, split between real and fake. Used to provide a high-volume training base for both classes. |
+| **Deepfake and Real Images**           | [https://www.kaggle.com/datasets/manjilkarki/deepfake-and-real-images](https://www.kaggle.com/datasets/manjilkarki/deepfake-and-real-images)                             | Contains labeled deepfake images and real face images. Adds diversity in deepfake generation techniques.                                   |
+| **HardFake vs Real Faces**             | [https://www.kaggle.com/datasets/hamzaboulahia/hardfakevsrealfaces](https://www.kaggle.com/datasets/hamzaboulahia/hardfakevsrealfaces)                                   | A challenging dataset with hard-to-detect fake images. Used to improve model robustness.                                                   |
+| **Real and Fake Face Detection**       | [https://www.kaggle.com/datasets/ciplab/real-and-fake-face-detection](https://www.kaggle.com/datasets/ciplab/real-and-fake-face-detection)                               | Balanced dataset of real and fake faces tailored for binary classification tasks like this project.                                        |
+| **Real vs AI-Generated Faces Dataset** | [https://www.kaggle.com/datasets/philosopher0808/real-vs-ai-generated-faces-dataset](https://www.kaggle.com/datasets/philosopher0808/real-vs-ai-generated-faces-dataset) | Contains real human faces and AI-generated faces from multiple GAN models. Improves AI vs real distinction ability.                        |
+
+---
 ## 📂 Project Structure
 
 Deepfake-Face-Detection-WebApp/
