@@ -54,6 +54,7 @@ This project uses a combined dataset of multiple real and fake face image source
 
 ## 📂 Project Structure
 
+
 Deepfake-Face-Detection-WebApp/
 │
 ├── backend/
@@ -70,8 +71,6 @@ Deepfake-Face-Detection-WebApp/
 │
 ├── README.md
 └── .gitignore
-
-
 ---
 
 ## ⚙️ Installation & Setup
