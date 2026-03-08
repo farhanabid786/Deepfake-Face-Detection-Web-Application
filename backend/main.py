@@ -19,18 +19,34 @@ app.add_middleware(
 def home():
     return {"message": "Deepfake Detection API Running"}
     
+# @app.post("/predict")
+# async def predict_image(file: UploadFile = File(...)):
+#     image_bytes = await file.read()
+#     img_tensor = preprocess_image(io.BytesIO(image_bytes))
+#     label, confidence = predict(img_tensor)
+
+#     return {
+#         "prediction": label,
+#         "confidence": round(confidence * 100, 2)
+#     }
+
 @app.post("/predict")
 async def predict_image(file: UploadFile = File(...)):
-    image_bytes = await file.read()
-    img_tensor = preprocess_image(io.BytesIO(image_bytes))
-    label, confidence = predict(img_tensor)
+    try:
+        image_bytes = await file.read()
+        img_tensor = preprocess_image(io.BytesIO(image_bytes))
+        label, confidence = predict(img_tensor)
 
-    return {
-        "prediction": label,
-        "confidence": round(confidence * 100, 2)
-    }
+        return {
+            "prediction": label,
+            "confidence": round(confidence * 100, 2)
+        }
 
+    except Exception as e:
+        return {"error": str(e)}
+        
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     uvicorn.run("main:app", host="0.0.0.0", port=port)
+
 
