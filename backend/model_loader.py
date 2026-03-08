@@ -33,9 +33,19 @@ def load_model():
     return model
 
 
+# def predict(img_tensor):
+#     model = load_model()
+#     prob = model.predict(img_tensor)[0][0]
+#     label = "Fake" if prob > 0.5 else "Real"
+#     confidence = prob if prob > 0.5 else 1 - prob
+#     return label, float(confidence)
+
 def predict(img_tensor):
     model = load_model()
+    print("Image shape:", img_tensor.shape)
+
     prob = model.predict(img_tensor)[0][0]
+
     label = "Fake" if prob > 0.5 else "Real"
     confidence = prob if prob > 0.5 else 1 - prob
     return label, float(confidence)
