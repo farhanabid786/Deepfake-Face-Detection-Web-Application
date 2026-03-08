@@ -15,6 +15,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def home():
+    return {"message": "Deepfake Detection API Running"}
+    
 @app.post("/predict")
 async def predict_image(file: UploadFile = File(...)):
     image_bytes = await file.read()
@@ -25,3 +29,4 @@ async def predict_image(file: UploadFile = File(...)):
         "prediction": label,
         "confidence": round(confidence * 100, 2)
     }
+
