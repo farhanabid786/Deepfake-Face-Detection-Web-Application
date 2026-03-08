@@ -49,7 +49,7 @@ import gdown
 import tensorflow as tf
 
 MODEL_PATH = "besttrainedmodel.tflite"
-FILE_ID = "YOUR_DRIVE_FILE_ID"
+FILE_ID = "16UMV3ATLGDiNUVvbgFGLEIJ2XguHnZ39"
 
 interpreter = None
 
@@ -91,3 +91,4 @@ def predict(img_tensor):
     confidence = prob if prob > 0.5 else 1 - prob
 
     return label, confidence
+
