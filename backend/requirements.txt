@@ -1,7 +1,7 @@
 fastapi
 uvicorn
-tensorflow-cpu==2.13.0
+tensorflow-cpu
 numpy
 pillow
-python-multipart
 gdown
+python-multipart
