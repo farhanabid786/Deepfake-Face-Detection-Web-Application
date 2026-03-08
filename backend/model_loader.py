@@ -1,4 +1,4 @@
-# import tensorflow as tf
+import tensorflow as tf
 
 # MODEL_PATH = "besttrainedmodel.h5"
 
@@ -49,4 +49,5 @@ def predict(img_tensor):
     label = "Fake" if prob > 0.5 else "Real"
     confidence = prob if prob > 0.5 else 1 - prob
     return label, float(confidence)
+
 
