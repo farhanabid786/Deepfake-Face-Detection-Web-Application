@@ -2,7 +2,7 @@ import gdown
 import os
 
 FILE_ID = "16UMV3ATLGDiNUVvbgFGLEIJ2XguHnZ39"
-MODEL_PATH = "backend/besttrainedmodel.h5"
+MODEL_PATH = "besttrainedmodel.h5"
 
 if not os.path.exists(MODEL_PATH):
 print("Downloading model during build...")
