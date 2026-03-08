@@ -1,10 +1,13 @@
 const imageInput = document.getElementById("imageInput");
 const preview = document.getElementById("preview");
 const resultBox = document.getElementById("result");
+const loader = document.getElementById("loader");
 
+/* change this if backend url changes */
 const API_URL = "https://deepfake-detector-i5st.onrender.com/predict";
 
-// Preview uploaded image
+/* preview uploaded image */
+
 imageInput.addEventListener("change", () => {
 
     const file = imageInput.files[0];
@@ -15,6 +18,7 @@ imageInput.addEventListener("change", () => {
     preview.hidden = false;
 });
 
+
 async function detect() {
 
     if (!imageInput.files.length) {
@@ -22,9 +26,8 @@ async function detect() {
         return;
     }
 
-    resultBox.className = "result";
-    resultBox.innerHTML = "Analyzing image...";
-    resultBox.classList.remove("hidden");
+    resultBox.classList.add("hidden");
+    loader.classList.remove("hidden");
 
     const formData = new FormData();
     formData.append("file", imageInput.files[0]);
@@ -36,11 +39,9 @@ async function detect() {
             body: formData
         });
 
-        if (!response.ok) {
-            throw new Error("Server error");
-        }
-
         const data = await response.json();
+
+        loader.classList.add("hidden");
 
         resultBox.innerHTML = `
             Prediction: <b>${data.prediction}</b><br>
@@ -51,9 +52,10 @@ async function detect() {
 
     } catch (error) {
 
-        resultBox.innerHTML = "Error connecting to server.";
-        resultBox.className = "result error";
+        loader.classList.add("hidden");
 
-        console.error(error);
+        resultBox.innerHTML = "Server error or backend is sleeping.";
+        resultBox.className = "result error";
     }
+
 }
