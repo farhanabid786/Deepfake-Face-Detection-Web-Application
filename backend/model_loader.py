@@ -2,6 +2,8 @@ import tensorflow as tf
 import os
 import gdown
 
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+
 MODEL_PATH = "besttrainedmodel.h5"
 FILE_ID = "16UMV3ATLGDiNUVvbgFGLEIJ2XguHnZ39"
 
@@ -38,3 +40,4 @@ confidence = prob if prob > 0.5 else 1 - prob
 
 return label, float(confidence)
 ```
+
