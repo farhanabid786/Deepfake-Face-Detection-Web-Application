@@ -1,5 +1,9 @@
 import os
+import os
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["TF_NUM_INTRAOP_THREADS"] = "1"
+os.environ["TF_NUM_INTEROP_THREADS"] = "1"
 
 import tensorflow as tf
 import gdown
@@ -37,3 +41,4 @@ def predict(img_tensor):
     confidence = prob if prob > 0.5 else 1 - prob
 
     return label, float(confidence)
+
