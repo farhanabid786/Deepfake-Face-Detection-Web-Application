@@ -35,7 +35,7 @@ The system provides high accuracy and a clean web interface built with **FastAPI
 | Backend    | FastAPI |
 | Frontend   | HTML, CSS, JavaScript |
 | Server     | Uvicorn |
-| Platform   | Localhost |
+| Platform   | Render, Netlify |
 
 ---
 ## 🗃️ Dataset Used
